@@ -1,0 +1,35 @@
+
+$palette : (
+    0: rgb(23, 74, 105),
+    1: rgb(22, 40, 100),
+    2: rgb(51, 22, 97),
+    3: rgb(106, 24, 95),
+    4: rgb(127, 28, 47),
+    5: rgb(134, 58, 30),
+    6: rgb(134, 83, 30),
+    7: rgb(134, 105, 30),
+    8: rgb(134, 127, 30),
+    9: rgb(99, 118, 26),
+    10: rgb(45, 104, 23),
+    11: rgb(24, 107, 91),
+);
+
+
+@function getColor($index, $key) {
+    $baseColor: map-get($palette, $index);
+    @if($key == 'border') {
+        @return $baseColor;
+    }
+    @if($key == 'text'){
+        @return $baseColor;
+    }
+    @if($key == 'detail-bg'){
+        @return mix(white, $baseColor, 20);
+    }
+    @if($key == 'detail-text'){
+        @return black;
+    }
+    @if($key == 'hue'){
+        @return $index * (360 / length($palette));
+    }
+};

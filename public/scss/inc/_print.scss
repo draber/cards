@@ -1,0 +1,40 @@
+.recto, .verso {
+	background: none;
+}
+
+.recto {
+	transform: rotate(180deg);
+}
+
+
+.property-details {
+	display: none;
+}
+
+.detail-trigger {
+	cursor: default;
+	.detail-text {
+		border: none;
+	}
+}
+
+.grid-container {
+		grid-template-columns: repeat(auto-fill, minmax(#{map-get($card, width) * 1px}, 1fr));
+}
+
+.card-container {
+	display: block;
+	&:nth-child(3n+0) {
+		page-break-after: always;
+	}
+}
+
+.frame {
+    h2 {
+    	color-adjust: exact !important;
+    }
+}
+
+.decorated-container {
+	box-shadow: none;	
+}

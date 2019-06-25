@@ -1,0 +1,236 @@
+html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  font: 1.6rem "Almendra", serif; }
+
+[hidden],
+template {
+  display: none; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+pre {
+  overflow: auto; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+  padding: 30px; }
+
+h1 {
+  font: 4rem "Della Respira", serif;
+  margin: 0;
+  padding: 0; }
+
+.toolbar ul {
+  list-style: none;
+  padding: 0; }
+.toolbar li {
+  display: inline-block;
+  padding: 4px; }
+
+body.print .recto, body.print .verso {
+  background: none; }
+body.print .recto {
+  transform: rotate(180deg); }
+body.print .property-details {
+  display: none; }
+body.print .detail-trigger {
+  cursor: default; }
+  body.print .detail-trigger .detail-text {
+    border: none; }
+body.print .grid-container {
+  grid-template-columns: repeat(auto-fill, minmax(264px, 1fr)); }
+body.print .card-container {
+  display: block; }
+  body.print .card-container:nth-child(3n+0) {
+    page-break-after: always; }
+body.print .frame h2 {
+  color-adjust: exact !important; }
+body.print .decorated-container {
+  box-shadow: none; }
+
+.decorated-container {
+  border-width: 1px;
+  border-color: #2d6817;
+  border-style: solid;
+  border-radius: 2px;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2); }
+
+.grid-container {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+  margin: 8px; }
+
+.card-container {
+  display: flex; }
+
+.recto, .verso {
+  width: 264px;
+  height: 396px;
+  margin: 8px;
+  overflow: hidden;
+  position: relative;
+  background: url(../img/bg.png); }
+
+.frame {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 30px black;
+  align-items: flex-end;
+  display: flex;
+  justify-content: center; }
+  .frame h2 {
+    font: 1.9rem bold "Della Respira", serif;
+    color: #2d6817 !important;
+    padding: 5px 20px;
+    background: url(../img/bg.png);
+    border: 1px solid #2d6817;
+    border-radius: 20px; }
+  .frame > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(300deg); }
+
+.card-properties-outer {
+  padding: 30px; }
+
+.card-properties {
+  width: 100%; }
+  .card-properties th, .card-properties td {
+    text-align: left;
+    padding: 2px; }
+  .card-properties thead th {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2d6817; }
+  .card-properties tbody tr:first-of-type td {
+    padding-top: 10px; }
+
+.property-details {
+  left: -100000px;
+  background: rgba(87, 134, 69, 0.8);
+  color: black;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 0;
+  margin: 30px;
+  width: calc(100% - 60px);
+  padding: 8px; }
+  .property-details table {
+    width: 100%; }
+    .property-details table tbody tr:first-of-type td {
+      padding-top: 0; }
+
+.detail-trigger {
+  cursor: pointer; }
+  .detail-trigger .detail-text {
+    border-bottom: 1px dashed #2d6817; }
+  .detail-trigger:hover .property-details {
+    left: 0; }
+
+@media print {
+  header {
+    display: none; }
+
+  .recto, .verso {
+    background: none; }
+
+  .recto {
+    transform: rotate(180deg); }
+
+  .property-details {
+    display: none; }
+
+  .detail-trigger {
+    cursor: default; }
+    .detail-trigger .detail-text {
+      border: none; }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(264px, 1fr)); }
+
+  .card-container {
+    display: block; }
+    .card-container:nth-child(3n+0) {
+      page-break-after: always; }
+
+  .frame h2 {
+    color-adjust: exact !important; }
+
+  .decorated-container {
+    box-shadow: none; } }
+
+/*# sourceMappingURL=cards.css.map */
