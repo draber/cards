@@ -24,7 +24,7 @@ $palette : (
         @return $baseColor;
     }
     @if($key == 'detail-bg'){
-        @return mix(white, $baseColor, 20);
+        @return mix(white, $baseColor, 50);
     }
     @if($key == 'detail-text'){
         @return black;

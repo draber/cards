@@ -3,14 +3,12 @@
 @import 'inc/header';
 
 
-$colorIndex: 10;
-
 // this is for preview convenience only
 body.print {
 	@import 'inc/print';
 }
 
-
+$colorIndex: 0;
 
 //===== cards ==============
 
@@ -33,17 +31,17 @@ body.print {
 
 .card-container {
 	display: flex;
+	justify-content: space-around;
+	margin-bottom: 50px;
 }
 
 .recto, .verso {
 	width: map-get($card, width) * 1px;
 	height: map-get($card, height) * 1px;
-	margin: map-get($card, margin)  * 1px;
 	overflow: hidden;
 	position: relative;
 	background: url(../img/bg.png);
 }
-
 
 .frame {
 	position: absolute;
@@ -56,18 +54,33 @@ body.print {
     display: flex;
     justify-content: center;
     h2 {
-    	font: 1.9rem bold $headingFont;
-		color: getColor($colorIndex, text) !important;
+		margin-bottom: 20px;
+    	font: bold 1.9rem $headingFont;
+		color: getColor($colorIndex, detail-text) !important;
 		padding: 5px 20px;
-		background: url(../img/bg.png);
-		border: 1px solid getColor($colorIndex, border);
-		border-radius: 20px;
+		background-image: url(../img/bg.png);
+		border: {
+			width: 1px;
+			color: getColor($colorIndex, border);
+			style: solid;
+			radius: 20px;
+		}
 	}
 	& > img {
 		position: absolute;
 		top: 0;
 		left: 0;
 		filter: hue-rotate(getColor($colorIndex, hue) * 1deg);
+	}
+}
+
+.recto {
+	.frame {
+		background: {
+			position: center;
+			size: cover;
+			repeat: no-repeat;
+		}
 	}
 }
 
@@ -132,6 +145,41 @@ body.print {
 	&:hover {
 		.property-details {
 			left: 0;
+		}
+	}
+}
+
+// color specific classes
+@each $key, $color in $palette {
+	.color-#{$key} {
+		.decorated-container {
+			border-color: getColor($key, border);
+		}
+		.frame {
+			h2 {
+				color: getColor($key, text) !important;
+				border-color: getColor($key, border);
+			}
+			& > img {
+				filter: hue-rotate(getColor($key, hue) * 1deg);
+			}
+		}
+		.card-properties {
+			thead {
+				th {
+					border-bottom-color: getColor($key, border);
+				}
+			}
+		}
+		.property-details {
+			background-color: rgba(getColor($key, detail-bg), .8);
+			color: getColor($key, detail-text);
+		}
+
+		.detail-trigger {
+			.detail-text {
+				border-bottom-color: getColor($key, border);
+			}
 		}
 	}
 }
