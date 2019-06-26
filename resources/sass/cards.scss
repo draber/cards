@@ -91,11 +91,42 @@ $colorIndex: 0;
 	// - white parts can be transparent with mix-blend-mode
 	// - everything else becomes a bit yellow-ish with a structure
 	// - might be difficult when image not wide enough
+
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	.antlitz-outer {
+		padding: $boxPadding * .8px;
+		display: flex;
+		justify-content: center;
+		max-height: 100%;
+		max-width:  100%;
+	}
 	.antlitz {
 		min-height: 100%;
-		//mix-blend-mode: multiply;
+		mix-blend-mode: multiply;
+	}
+}
+
+.verso {
+	position: relative;
+	.badge {
+		z-index: 2;
+		display: inline-block;
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+		border: {
+			style: solid;
+			width: 1px;
+			color: getColor($colorIndex, border);
+			radius: 50%;
+		}
+		text-align: center;
+		background: rgba(getColor($colorIndex, detail-bg), .8);
+		color: getColor($colorIndex, detail-text);
+		padding: 2px 10px;
+		font: bold 1.8rem $headingFont;
+		text-shadow: 1px 1px 0 rgba(255,255,255,0.2);
 	}
 }
 
@@ -108,12 +139,22 @@ $colorIndex: 0;
 	width: 100%;
 	th, td {
 		text-align: left;
-		padding: 2px;
+		vertical-align: top;
+		padding: 2px 6px;
+		font-size: 1.3rem;
+		&.value {
+			white-space: nowrap;
+			color: getColor($colorIndex, text);
+			font-weight: bold;
+		}
 	}
 	thead {
 		th {
+			text-align: center;
 			padding-bottom: 10px;
 			border-bottom: 1px solid getColor($colorIndex, border);
+			font-size: 1.8rem;
+			font-weight: bold;
 		}
 	}
 	tbody {
@@ -121,6 +162,17 @@ $colorIndex: 0;
 			&:first-of-type {
 				td {
 					padding-top: 10px;
+				}
+			}
+			&:last-of-type {
+				td {
+					padding-top: 10px;
+				}
+			}
+			&.pre-ultimate {
+				td {
+					padding-bottom: 10px;
+					border-bottom: 1px solid getColor($colorIndex, border);
 				}
 			}
 		}
@@ -133,7 +185,6 @@ $colorIndex: 0;
 	left: -100000px;
 	background: rgba(getColor($colorIndex, detail-bg), .8);
 	color: getColor($colorIndex, detail-text);
-	text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
 	position: absolute;
 	bottom: 0;
 	margin: $boxPadding * 1px;
@@ -186,6 +237,15 @@ $colorIndex: 0;
 					border-bottom-color: getColor($key, border);
 				}
 			}
+			tbody {
+				tr {
+					&.pre-ultimate {
+						td {
+							border-bottom: 1px solid getColor($key, border);
+						}
+					}
+				}
+			}
 		}
 		.property-details {
 			background-color: rgba(getColor($key, detail-bg), .8);
@@ -195,6 +255,13 @@ $colorIndex: 0;
 		.detail-trigger {
 			.detail-text {
 				border-bottom-color: getColor($key, border);
+			}
+		}
+		.verso {
+			.badge {
+				border-color: getColor($key, border);
+				background-color: rgba(getColor($key, detail-bg), .8);
+				color: getColor($key, detail-text);
 			}
 		}
 	}
