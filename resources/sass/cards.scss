@@ -75,14 +75,30 @@ $colorIndex: 0;
 }
 
 .recto {
-	.frame {
-		background: {
-			position: center;
-			size: cover;
-			repeat: no-repeat;
-		}
+	// image as bg:
+	// - needs to be enabled in printer dialog
+	// - white parts cannot be transparent
+
+	//.frame {
+	//	background: {
+	//		position: center;
+	//		size: cover;
+	//		repeat: no-repeat;
+	//	}
+	//}
+
+	// image as dom element:
+	// - white parts can be transparent with mix-blend-mode
+	// - everything else becomes a bit yellow-ish with a structure
+	// - might be difficult when image not wide enough
+	display: flex;
+	justify-content: center;
+	.antlitz {
+		min-height: 100%;
+		//mix-blend-mode: multiply;
 	}
 }
+
 
 .card-properties-outer {
     padding: $boxPadding * 1px;

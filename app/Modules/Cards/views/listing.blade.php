@@ -6,7 +6,8 @@
         @for($i = 0; $i < 8; $i++)
             <section class="card-container color-{{$i}}">
                 <div class="recto decorated-container">
-                    <div class="frame" style="background-image: url(img/cards<?=($i+1)?>.jpg)">
+                    <img class="antlitz" src="img/cards<?=($i+1)?>.jpg" alt=""/>
+                    <div class="frame">
                         <img src="img/frame.png">
                         <h2>Card Name</h2>
                     </div>
