@@ -8,18 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Amiri|Sorts+Mill+Goudy|Almendra|Della+Respira&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/cards.css">
-
+    <link rel="manifest" href="/manifest.json">
 </head>
-<body class="<?=$_GET['style'] ?? 'regular'?>">
-<header class="decorated-container">
-    <h1>Page Title</h1>
-    <div class="toolbar">
-        <ul>
-            <li><a href="?style=print">Print</a></li>
-            <li><a href="?style=regular">Regular</a></li>
-        </ul>
-    </div>
-</header>
+<body>
 <main class="grid-container">
     @yield('content')
 </main>
