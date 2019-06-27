@@ -15,7 +15,11 @@ $palette : (
 );
 
 
-@function getColor($index, $key) {
+@function getColor($index, $key, $complement: false) {
+    $count: length($palette);
+    @if($complement == true){
+        $index: ($index + ($count / 2)) % $count;
+    }
     $baseColor: map-get($palette, $index);
     @if($key == 'border') {
         @return $baseColor;

@@ -1,6 +1,5 @@
 .recto {
 	transform: rotate(180deg);
-	background: none;
 }
 
 .property-details {
@@ -16,6 +15,7 @@
 
 .grid-container {
  	grid-template-columns: repeat(auto-fill, minmax(#{map-get($card, width) * 1px}, 1fr));
+	 transform: scale(.8);
 }
 
 .card-container {
@@ -27,7 +27,7 @@
 }
 
 .verso {
-	margin-top: 20pt
+	margin-top: 6px;
 }
 
 .decorated-container {
