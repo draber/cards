@@ -15,7 +15,7 @@
 
 .grid-container {
  	grid-template-columns: repeat(auto-fill, minmax(#{map-get($card, width) * 1px}, 1fr));
-	 transform: scale(.8);
+	transform: scale(.8);
 }
 
 .card-container {
