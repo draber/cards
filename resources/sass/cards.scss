@@ -55,7 +55,7 @@ $colorIndex: 0;
 		position: absolute;
 		top: 0;
 		left: 0;
-		filter: hue-rotate(getColor($colorIndex, hue) * 1deg);
+		filter: hue-rotate(getHueRotation($colorIndex));
 	}
 }
 
@@ -64,12 +64,13 @@ h2 {
 	margin: 0;
 	position: relative;
 	&.badge-top {
-		margin-top: 5px
+		margin-top: 28px
 	}
 	&.badge-bottom {
-		top: -5px;
+		top: -6px;
 	}
 }
+
 
 .recto {
 	display: flex;
@@ -98,6 +99,7 @@ h2 {
 		position: absolute;
 		right: 6px;
 		bottom: 6px;
+		border-radius: 50%;
 	}
 	.frame {
 		align-items: flex-start;
@@ -111,7 +113,7 @@ h2 {
 
 .card-properties {
 	width: 100%;
-	margin-top: 20px;
+	margin-top: 40px;
 	td {
 		text-align: left;
 		vertical-align: top;
@@ -170,11 +172,12 @@ h2 {
 	font: bold 1.8rem $headingFont;
 	text-shadow: 1px 1px 0 rgba(255,255,255,0.2);
 	display: inline-block;
+	box-shadow: 3px 3px 5px 0 rgba(0,0,0,.2);
 }
 
 .property-details {
 	left: -100000px;
-	background: rgba(getColor($colorIndex, detail-bg), .8);
+	background: getColor($colorIndex, detail-bg);
 	color: getColor($colorIndex, detail-text);
 	position: absolute;
 	bottom: 0;
@@ -199,14 +202,14 @@ h2 {
 }
 
 // color specific classes
-@each $key, $color in $palette {
-	.color-#{$key} {
+@each $index, $rgb in $palette {
+	.color-#{$index} {
 		.decorated-container {
-			border-color: getColor($key, border);
+			border-color: getColor($index, border);
 		}
 		.frame {
 			& > img {
-				filter: hue-rotate(getColor($key, hue) * 1deg);
+				filter: hue-rotate(getHueRotation($index));
 			}
 		}
 		.card-properties {
@@ -214,34 +217,37 @@ h2 {
 				tr {
 					&.pre-ultimate {
 						td {
-							border-bottom: 1px solid getColor($key, border);
+							border-bottom: 1px solid getColor($index, border);
 						}
 					}
 				}
 			}
 		}
 		.property-details {
-			background-color: rgba(getColor($key, detail-bg), .8);
-			color: getColor($key, detail-text);
+			background-color: getColor($index, detail-bg);
+			color: getColor($index, detail-text);
 		}
 
 		.detail-trigger {
 			.detail-text {
-				border-bottom-color: getColor($key, border);
+				border-bottom-color: getColor($index, border);
 			}
 		}
 		[class^="badge-"], [class*=" badge-"] {
-			border-color: getColor($key, border, true);
-			background-color: getColor($key, detail-bg);
-			color: getColor($key, detail-text);
-		}
+			border-color: getColor($index, border);
+			background-color: getColor($index, detail-bg);
+			color: getColor($index, detail-text);
+        }
+        .verso {
+            &::before {
+                background-color: getColor($index, border);
+				filter: hue-rotate(getHueRotation($index));
+                border-color: getColor($index, border);
+            }
+        }
 	}
 }
 
 @media print {
-	header {
-		display: none;
-	}
 	@import 'inc/print';
 }
-
