@@ -58,19 +58,19 @@ h2 {
 .recto {
 	display: flex;
 	align-items: center;
-	.frame {
-		align-items: flex-end;
-	}
 	.antlitz-outer {
 		padding: $boxPadding * .8px;
-		max-height: 100%;
-		max-width:  100%;
 		display:flex;
 		justify-content: center;
+		max-height: 100%;
+		max-width:  100%;
 	}
 	.antlitz {
 		min-height: 100%;
 		mix-blend-mode: multiply;
+	}
+	.frame {
+		align-items: flex-end;
 	}
 }
 
