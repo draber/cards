@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/print-preview.css">
     @endif
 </head>
-<body>
+<body class="print">
 <main class="grid-container">
     @yield('content')
 </main>

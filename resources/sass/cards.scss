@@ -47,7 +47,7 @@ h2 {
 	margin: 0;
 	position: relative;
 	&.badge-top {
-		margin-top: 28px
+		margin-top: 8px;
 	}
 	&.badge-bottom {
 		top: -6px;
@@ -58,19 +58,19 @@ h2 {
 .recto {
 	display: flex;
 	align-items: center;
+	.frame {
+		align-items: flex-end;
+	}
 	.antlitz-outer {
 		padding: $boxPadding * .8px;
-		display: flex;
-		justify-content: center;
 		max-height: 100%;
 		max-width:  100%;
+		display:flex;
+		justify-content: center;
 	}
 	.antlitz {
 		min-height: 100%;
 		mix-blend-mode: multiply;
-	}
-	.frame {
-		align-items: flex-end;
 	}
 }
 
@@ -96,7 +96,7 @@ h2 {
 
 .card-properties {
 	width: 100%;
-	margin-top: 40px;
+	margin-top: 28px;
 	td {
 		text-align: left;
 		vertical-align: top;
