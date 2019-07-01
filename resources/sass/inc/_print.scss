@@ -1,11 +1,7 @@
-@import 'inc/bootstrap';
+@import './bootstrap';
 
 @page {
-	size: landscape;
-}
-
-body {
-    max-width: 297mm;
+	size: A4 landscape;
 }
 
 .recto {
@@ -27,11 +23,15 @@ body {
     $scale: .8;
     transform: scale($scale);
     transform-origin: top left;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .card-container {
 	display: block;
+}
+
+.recto, .verso {
+    box-shadow: none;
 }
 
 .verso {
@@ -51,7 +51,6 @@ body {
 	}
 }
 
-// color specific classes
 @each $index, $rgb in $palette {
 	.color-#{$index} {
 		.verso {

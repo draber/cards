@@ -8,5 +8,5 @@ $card: (
 );
 
 $cardContainer: (
-	width: (map-get($card, width) * 2) + (map-get($card, margin) * 4)
+	width: map-get($card, width) * 2
 );
