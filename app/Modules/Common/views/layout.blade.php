@@ -11,7 +11,6 @@
     @if(env('CARDS_PRINT_PREVIEW'))
         <link rel="stylesheet" href="css/print-preview.css">
     @endif
-    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 <main class="grid-container">
