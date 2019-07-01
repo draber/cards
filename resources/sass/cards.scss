@@ -1,22 +1,13 @@
 @import 'inc/bootstrap';
 @import 'inc/normalize';
 
-
-// this is for preview convenience only
-body.print {
-	@import 'inc/print';
-}
-
 $colorIndex: 0;
-
-//===== cards ==============
 
 .decorated-container {
 	border: {
 		width: 1px;
 		color: getColor($colorIndex, border);
 		style: solid;
-		radius: 2px;
 	}
 	box-shadow: 3px 3px 5px 0 rgba(0,0,0,.2);
 }
