@@ -1,5 +1,5 @@
 <section class="card-container color-{{$i}}">
-    <div class="recto decorated-container">
+    <div class="recto">
         <div class="antlitz-outer">
             <img class="antlitz" src="{{$entry->img}}" alt=""/>
         </div>
@@ -8,7 +8,7 @@
             <h2 class="badge-bottom">{{$entry->name}}</h2>
         </div>
     </div>
-    <div class="verso decorated-container">
+    <div class="verso">
         <div class="frame">
             <img src="img/frame.png">
             <h2 class="badge-top">{{$entry->name}}</h2>

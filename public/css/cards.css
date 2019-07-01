@@ -79,49 +79,6 @@ td,
 th {
   padding: 0; }
 
-body.print body {
-  max-width: 297mm; }
-body.print .recto {
-  transform: rotate(180deg); }
-body.print .property-details {
-  display: none; }
-body.print .detail-trigger {
-  cursor: default; }
-  body.print .detail-trigger .detail-text {
-    border: none; }
-body.print .grid-container {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  transform: scale(0.8);
-  transform-origin: top left; }
-body.print .card-container {
-  display: block;
-  margin-bottom: 50pt; }
-  body.print .card-container:nth-child(3n+0) {
-    page-break-after: always; }
-body.print .verso {
-  margin-top: 10px;
-  overflow: visible; }
-  body.print .verso::before {
-    content: ' ';
-    display: block;
-    height: 10px;
-    position: absolute;
-    top: -11px;
-    left: -1px;
-    width: calc(100% + 2px);
-    border-top: 1px #999 solid;
-    border-bottom: 1px #999 solid;
-    background-image: url(../img/frame.png); }
-body.print .decorated-container {
-  box-shadow: none; }
-
-.decorated-container {
-  border-width: 1px;
-  border-color: #186b5b;
-  border-style: solid;
-  border-radius: 2px;
-  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2); }
-
 .grid-container {
   display: grid;
   grid-gap: 16px;
@@ -138,7 +95,8 @@ body.print .decorated-container {
   height: 396px;
   overflow: hidden;
   position: relative;
-  background: url(../img/bg.png); }
+  background: url(../img/bg.png);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2); }
 
 .frame {
   position: absolute;
@@ -254,8 +212,6 @@ h2 {
   .detail-trigger:hover .property-details {
     left: 0; }
 
-.color-0 .decorated-container {
-  border-color: #186b5b; }
 .color-0 .frame > img {
   filter: hue-rotate(0deg); }
 .color-0 .card-properties tbody tr.pre-ultimate td {
@@ -269,13 +225,7 @@ h2 {
   border-color: #186b5b;
   background-color: #8cb5ad;
   color: #186b5b; }
-.color-0 .verso::before {
-  background-color: #186b5b;
-  filter: hue-rotate(0deg);
-  border-color: #186b5b; }
 
-.color-1 .decorated-container {
-  border-color: #174a69; }
 .color-1 .frame > img {
   filter: hue-rotate(30deg); }
 .color-1 .card-properties tbody tr.pre-ultimate td {
@@ -289,13 +239,7 @@ h2 {
   border-color: #174a69;
   background-color: #8ba5b4;
   color: #174a69; }
-.color-1 .verso::before {
-  background-color: #174a69;
-  filter: hue-rotate(30deg);
-  border-color: #174a69; }
 
-.color-2 .decorated-container {
-  border-color: #162864; }
 .color-2 .frame > img {
   filter: hue-rotate(60deg); }
 .color-2 .card-properties tbody tr.pre-ultimate td {
@@ -309,13 +253,7 @@ h2 {
   border-color: #162864;
   background-color: #8b94b2;
   color: #162864; }
-.color-2 .verso::before {
-  background-color: #162864;
-  filter: hue-rotate(60deg);
-  border-color: #162864; }
 
-.color-3 .decorated-container {
-  border-color: #331661; }
 .color-3 .frame > img {
   filter: hue-rotate(90deg); }
 .color-3 .card-properties tbody tr.pre-ultimate td {
@@ -329,13 +267,7 @@ h2 {
   border-color: #331661;
   background-color: #998bb0;
   color: #331661; }
-.color-3 .verso::before {
-  background-color: #331661;
-  filter: hue-rotate(90deg);
-  border-color: #331661; }
 
-.color-4 .decorated-container {
-  border-color: #6a185f; }
 .color-4 .frame > img {
   filter: hue-rotate(120deg); }
 .color-4 .card-properties tbody tr.pre-ultimate td {
@@ -349,13 +281,7 @@ h2 {
   border-color: #6a185f;
   background-color: #b58caf;
   color: #6a185f; }
-.color-4 .verso::before {
-  background-color: #6a185f;
-  filter: hue-rotate(120deg);
-  border-color: #6a185f; }
 
-.color-5 .decorated-container {
-  border-color: #7f1c2f; }
 .color-5 .frame > img {
   filter: hue-rotate(150deg); }
 .color-5 .card-properties tbody tr.pre-ultimate td {
@@ -369,13 +295,7 @@ h2 {
   border-color: #7f1c2f;
   background-color: #bf8e97;
   color: #7f1c2f; }
-.color-5 .verso::before {
-  background-color: #7f1c2f;
-  filter: hue-rotate(150deg);
-  border-color: #7f1c2f; }
 
-.color-6 .decorated-container {
-  border-color: #863a1e; }
 .color-6 .frame > img {
   filter: hue-rotate(180deg); }
 .color-6 .card-properties tbody tr.pre-ultimate td {
@@ -389,13 +309,7 @@ h2 {
   border-color: #863a1e;
   background-color: #c39d8f;
   color: #863a1e; }
-.color-6 .verso::before {
-  background-color: #863a1e;
-  filter: hue-rotate(180deg);
-  border-color: #863a1e; }
 
-.color-7 .decorated-container {
-  border-color: #86531e; }
 .color-7 .frame > img {
   filter: hue-rotate(210deg); }
 .color-7 .card-properties tbody tr.pre-ultimate td {
@@ -409,13 +323,7 @@ h2 {
   border-color: #86531e;
   background-color: #c3a98f;
   color: #86531e; }
-.color-7 .verso::before {
-  background-color: #86531e;
-  filter: hue-rotate(210deg);
-  border-color: #86531e; }
 
-.color-8 .decorated-container {
-  border-color: #86691e; }
 .color-8 .frame > img {
   filter: hue-rotate(240deg); }
 .color-8 .card-properties tbody tr.pre-ultimate td {
@@ -429,13 +337,7 @@ h2 {
   border-color: #86691e;
   background-color: #c3b48f;
   color: #86691e; }
-.color-8 .verso::before {
-  background-color: #86691e;
-  filter: hue-rotate(240deg);
-  border-color: #86691e; }
 
-.color-9 .decorated-container {
-  border-color: #867f1e; }
 .color-9 .frame > img {
   filter: hue-rotate(270deg); }
 .color-9 .card-properties tbody tr.pre-ultimate td {
@@ -449,13 +351,7 @@ h2 {
   border-color: #867f1e;
   background-color: #c3bf8f;
   color: #867f1e; }
-.color-9 .verso::before {
-  background-color: #867f1e;
-  filter: hue-rotate(270deg);
-  border-color: #867f1e; }
 
-.color-10 .decorated-container {
-  border-color: #63761a; }
 .color-10 .frame > img {
   filter: hue-rotate(300deg); }
 .color-10 .card-properties tbody tr.pre-ultimate td {
@@ -469,13 +365,7 @@ h2 {
   border-color: #63761a;
   background-color: #b1bb8d;
   color: #63761a; }
-.color-10 .verso::before {
-  background-color: #63761a;
-  filter: hue-rotate(300deg);
-  border-color: #63761a; }
 
-.color-11 .decorated-container {
-  border-color: #2d6817; }
 .color-11 .frame > img {
   filter: hue-rotate(330deg); }
 .color-11 .card-properties tbody tr.pre-ultimate td {
@@ -489,12 +379,10 @@ h2 {
   border-color: #2d6817;
   background-color: #96b48b;
   color: #2d6817; }
-.color-11 .verso::before {
-  background-color: #2d6817;
-  filter: hue-rotate(330deg);
-  border-color: #2d6817; }
 
 @media print {
+  @page {
+    size: landscape; }
   body {
     max-width: 297mm; }
 
@@ -510,32 +398,74 @@ h2 {
       border: none; }
 
   .grid-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     transform: scale(0.8);
-    transform-origin: top left; }
+    transform-origin: top left;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 
   .card-container {
-    display: block;
-    margin-bottom: 50pt; }
-    .card-container:nth-child(3n+0) {
-      page-break-after: always; }
+    display: block; }
 
   .verso {
     margin-top: 10px;
     overflow: visible; }
     .verso::before {
-      content: ' ';
+      content: '';
       display: block;
+      width: 100%;
       height: 10px;
       position: absolute;
-      top: -11px;
-      left: -1px;
-      width: calc(100% + 2px);
+      top: -10px;
       border-top: 1px #999 solid;
       border-bottom: 1px #999 solid;
-      background-image: url(../img/frame.png); }
+      background-image: url(../img/frame.png);
+      box-sizing: border-box; }
 
-  .decorated-container {
-    box-shadow: none; } }
+  .color-0 .verso::before {
+    filter: hue-rotate(0deg);
+    border-color: #186b5b; }
+
+  .color-1 .verso::before {
+    filter: hue-rotate(30deg);
+    border-color: #174a69; }
+
+  .color-2 .verso::before {
+    filter: hue-rotate(60deg);
+    border-color: #162864; }
+
+  .color-3 .verso::before {
+    filter: hue-rotate(90deg);
+    border-color: #331661; }
+
+  .color-4 .verso::before {
+    filter: hue-rotate(120deg);
+    border-color: #6a185f; }
+
+  .color-5 .verso::before {
+    filter: hue-rotate(150deg);
+    border-color: #7f1c2f; }
+
+  .color-6 .verso::before {
+    filter: hue-rotate(180deg);
+    border-color: #863a1e; }
+
+  .color-7 .verso::before {
+    filter: hue-rotate(210deg);
+    border-color: #86531e; }
+
+  .color-8 .verso::before {
+    filter: hue-rotate(240deg);
+    border-color: #86691e; }
+
+  .color-9 .verso::before {
+    filter: hue-rotate(270deg);
+    border-color: #867f1e; }
+
+  .color-10 .verso::before {
+    filter: hue-rotate(300deg);
+    border-color: #63761a; }
+
+  .color-11 .verso::before {
+    filter: hue-rotate(330deg);
+    border-color: #2d6817; } }
 
 /*# sourceMappingURL=cards.css.map */
